@@ -2,8 +2,8 @@
 
 ## 확인한 자료
 
-- 디자인 원본: [https://www.figma.com/design/aB1r5NxzeAJZDwp1CJoPuO/%EB%B0%95%EA%B1%B4%EC%98%81?node-id=515-303&m=dev]
-- 확인한 화면: [foryou]
+- 디자인 원본: [@https://www.figma.com/design/aB1r5NxzeAJZDwp1CJoPuO/%EB%B0%95%EA%B1%B4%EC%98%81?node-id=525-1518&m=dev]
+- 확인한 화면: [메인페이지]
 - 실제 에셋 위치: [assets]
 
 ## 화면 목록
