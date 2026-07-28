@@ -1,0 +1,1306 @@
+/* ==========================================================================
+   CGV 메인페이지 스타일
+   디자인 원본: design-analysis.md 참고 (Figma node 525:1518)
+   ========================================================================== */
+
+:root {
+  --color_black: #000000;
+  --color_white: #ffffff;
+  --color_grey_10: #e5e5e5;
+  --color_grey_25: #d2d2d2;
+  --color_grey_60: #969696;
+  --color_lime: #e4ff30;
+  --color_lime_soft: #cffd01;
+  --color_bluegrey: #8498ac;
+  --color_yellow: #fde52b;
+  --color_coral: #e46658;
+  --color_indigo: #3d2cd5;
+  --color_info_bg: #e7e7e7;
+
+  --font_pretendard: "Pretendard", "Pretendard Variable", -apple-system, sans-serif;
+  --font_inter: "Inter", sans-serif;
+  --font_archivo_black: "Archivo Black", sans-serif;
+  --font_bebas: "Bebas Neue", sans-serif;
+  --font_almarai: "Almarai", sans-serif;
+
+  --radius_pill: 999px;
+  --radius_card: 12px;
+
+  --section_pad_x: clamp(20px, 6vw, 126px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font_pretendard);
+  color: var(--color_black);
+  background: var(--color_black);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.skip_link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 1000;
+  background: var(--color_white);
+  color: var(--color_black);
+  padding: 12px 20px;
+}
+
+.skip_link:focus {
+  left: 12px;
+  top: 12px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color_lime);
+  outline-offset: 2px;
+}
+
+/* ---------- 공통 버튼 ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 50px;
+  padding: 0 22px;
+  border-radius: var(--radius_pill);
+  font-size: 18px;
+  white-space: nowrap;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.btn_outline_light {
+  border: 1px solid var(--color_lime);
+  color: var(--color_white);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn_fill_lime {
+  background: var(--color_lime);
+  color: #686868;
+  font-weight: 500;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn_outline_dark {
+  border: 1px solid var(--color_black);
+  color: var(--color_black);
+  background: transparent;
+  font-family: var(--font_almarai);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  height: 50px;
+}
+
+.btn_fill_white {
+  background: var(--color_white);
+  color: var(--color_black);
+  height: 44px;
+}
+
+.btn_fill_grey {
+  background: var(--color_grey_60);
+  color: var(--color_white);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn_sm {
+  height: 38px;
+  padding: 0 16px;
+  font-size: 14px;
+}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+.section_hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  color: var(--color_white);
+  border-radius: 0 0 16px 16px;
+}
+
+.hero_media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero_video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero_gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(152deg, rgba(255, 255, 255, 0) 65%, rgba(0, 0, 0, 0.45) 100%);
+}
+
+.hero_header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 32px var(--section_pad_x) 0;
+}
+
+.hero_header_left {
+  display: flex;
+  align-items: center;
+  gap: clamp(24px, 6vw, 64px);
+}
+
+.hero_logo img {
+  width: 64px;
+}
+
+.hero_nav ul {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.hero_nav a {
+  color: var(--color_grey_10);
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+}
+
+.hero_nav a.hero_nav_primary {
+  color: var(--color_white);
+}
+
+.hero_nav a:hover,
+.hero_nav a:focus-visible {
+  color: var(--color_white);
+  border-bottom-color: var(--color_white);
+}
+
+.hero_header_right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon_btn {
+  width: 36px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon_btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.mypage_btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mypage_avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+.mypage_arrow {
+  width: 10px;
+}
+
+.hero_content {
+  position: relative;
+  z-index: 2;
+  padding: 0 var(--section_pad_x) clamp(40px, 8vw, 110px);
+  max-width: 620px;
+}
+
+.hero_eyebrow {
+  margin: 0 0 8px;
+  font-size: clamp(14px, 1.6vw, 18px);
+  font-weight: 500;
+  color: var(--color_grey_25);
+}
+
+.hero_title {
+  margin: 0;
+  font-size: clamp(32px, 6vw, 55px);
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1.15;
+}
+
+.hero_meta {
+  margin: 8px 0 0;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.hero_stat {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero_rating {
+  margin: 0;
+  font-size: 22px;
+}
+
+.hero_rating strong {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.hero_rating .unit {
+  font-weight: 400;
+}
+
+.hero_badges {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero_badges img {
+  height: 20px;
+  width: auto;
+}
+
+.hero_btns {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* ==========================================================================
+   ARCHIVE
+   ========================================================================== */
+.section_archive {
+  background: var(--color_black);
+  color: var(--color_white);
+  padding: 100px var(--section_pad_x) 60px;
+}
+
+.archive_wrap {
+  max-width: 1920px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.archive_tit {
+  text-align: center;
+}
+
+.archive_tit_sub {
+  margin: 0 0 20px;
+  font-family: var(--font_archivo_black);
+  font-size: 16px;
+}
+
+.archive_tit_main {
+  margin: 0;
+  font-family: var(--font_inter);
+  font-weight: 400;
+  font-size: clamp(24px, 4vw, 32px);
+  letter-spacing: 1px;
+}
+
+.archive_list {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  padding-bottom: 8px;
+}
+
+.archive_card {
+  position: relative;
+  flex: 0 0 auto;
+  width: min(90vw, 340px);
+  height: 500px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--color_white);
+  scroll-snap-align: start;
+}
+
+.archive_card_director {
+  width: min(90vw, 620px);
+}
+
+.archive_card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.archive_card_info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.archive_card_name {
+  display: block;
+  font-family: var(--font_inter);
+  font-weight: 700;
+  font-size: clamp(24px, 3vw, 36px);
+}
+
+.archive_card_desc {
+  margin: 6px 0 0;
+  font-family: var(--font_inter);
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.archive_card_actor {
+  display: flex;
+}
+
+.archive_card_actor .archive_card_label {
+  position: absolute;
+  left: 16px;
+  bottom: 20px;
+  font-family: var(--font_inter);
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--color_white);
+}
+
+.archive_card_empty {
+  display: flex;
+  align-items: flex-end;
+  background: var(--color_white);
+}
+
+.archive_card_empty .archive_card_label {
+  padding: 20px;
+  font-family: var(--font_inter);
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--color_white);
+}
+
+/* ==========================================================================
+   FOR YOU
+   ========================================================================== */
+.section_foryou {
+  background: var(--color_black);
+  padding: 80px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.foryou_goods {
+  position: relative;
+  padding: 0 var(--section_pad_x);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.foryou_goods_prev {
+  position: absolute;
+  left: clamp(8px, 3vw, 60px);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.foryou_goods_prev img {
+  width: 100%;
+  transform: rotate(180deg);
+}
+
+.foryou_goods_prev:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.foryou_ticket {
+  width: 100%;
+  max-width: 1283px;
+  background: var(--color_white);
+  border: 1px solid var(--color_black);
+  display: grid;
+  grid-template-columns: minmax(220px, 342px) 1fr;
+}
+
+.foryou_ticket_visual {
+  position: relative;
+  background: var(--color_lime_soft);
+  border-bottom: 1px solid var(--color_black);
+  overflow: hidden;
+  aspect-ratio: 342 / 437;
+}
+
+.foryou_goods_img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.foryou_ticket_visual .confetti {
+  position: absolute;
+  width: 25%;
+  opacity: 0.9;
+}
+
+.confetti_1 { top: 2%; right: 4%; }
+.confetti_2 { top: 20%; right: 20%; width: 18%; }
+.confetti_3 { top: 45%; right: 6%; width: 30%; }
+
+.foryou_ticket_info {
+  padding: clamp(24px, 4vw, 60px);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.foryou_ticket_status {
+  margin: 0;
+  font-family: var(--font_pretendard);
+  font-weight: 600;
+  font-size: clamp(18px, 2.5vw, 28px);
+  text-align: right;
+}
+
+.foryou_ticket_open {
+  margin: 0;
+  font-family: var(--font_inter);
+  font-size: clamp(28px, 4vw, 40px);
+  text-align: right;
+}
+
+.foryou_ticket_name {
+  margin: 12px 0 0;
+  font-family: var(--font_inter);
+  font-weight: 500;
+  font-size: clamp(28px, 4vw, 40px);
+  text-transform: uppercase;
+}
+
+.foryou_ticket_credit {
+  margin: 0;
+  font-family: var(--font_inter);
+  font-weight: 500;
+  font-size: clamp(16px, 2vw, 22px);
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+.foryou_ticket_credit a {
+  text-decoration: underline;
+}
+
+.foryou_ticket_info .btn {
+  align-self: flex-start;
+  margin-top: 12px;
+}
+
+/* 캐러셀 */
+.foryou_carousel {
+  position: relative;
+  padding: 0 var(--section_pad_x);
+}
+
+.foryou_track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  gap: 0;
+  border-radius: 4px;
+}
+
+.foryou_track::-webkit-scrollbar {
+  display: none;
+}
+
+.foryou_slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 400px;
+  background: var(--color_white);
+}
+
+.foryou_slide_img {
+  overflow: hidden;
+}
+
+.foryou_slide_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.foryou_slide_content {
+  background: var(--slide-bg, var(--color_white));
+  padding: clamp(20px, 3vw, 54px) clamp(20px, 3vw, 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  color: var(--color_black);
+}
+
+.foryou_slide_reason {
+  margin: 0 0 8px;
+  font-family: var(--font_inter);
+  font-weight: 600;
+  font-size: clamp(15px, 1.6vw, 22px);
+}
+
+.foryou_slide_title {
+  margin: 0;
+  font-family: var(--font_inter);
+  font-size: clamp(26px, 3.5vw, 40px);
+}
+
+.foryou_slide_meta {
+  margin: 0 0 16px;
+  font-family: var(--font_inter);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.carousel_arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(36px, 5vw, 60px);
+  height: clamp(36px, 5vw, 60px);
+  z-index: 2;
+}
+
+.carousel_arrow_prev {
+  left: 4px;
+}
+
+.carousel_arrow_prev img {
+  transform: rotate(180deg);
+}
+
+.carousel_arrow_next {
+  right: 4px;
+}
+
+/* ==========================================================================
+   CINETALK
+   ========================================================================== */
+.section_cinetalk {
+  position: relative;
+  background: var(--color_bluegrey);
+  padding: 60px var(--section_pad_x) 100px;
+  overflow: hidden;
+}
+
+.cinetalk_bg_text {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font_bebas);
+  font-size: clamp(120px, 24vw, 420px);
+  color: rgba(0, 0, 0, 0.65);
+  white-space: nowrap;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.cinetalk_swirl {
+  position: absolute;
+  left: 4%;
+  top: 15%;
+  width: clamp(120px, 16vw, 300px);
+  opacity: 0.7;
+}
+
+.cinetalk_head {
+  position: relative;
+  color: var(--color_white);
+  margin-bottom: 40px;
+}
+
+.cinetalk_head_line1 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.cinetalk_head_line2 {
+  margin: 2px 0 0;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.cinetalk_slider {
+  position: relative;
+}
+
+.cinetalk_track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  padding: 20px 0;
+}
+
+.cinetalk_track::-webkit-scrollbar {
+  display: none;
+}
+
+.cinetalk_card {
+  scroll-snap-align: center;
+  flex: 0 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  color: var(--color_black);
+}
+
+.cinetalk_card_side {
+  width: min(85vw, 370px);
+  background: rgba(204, 204, 204, 0.9);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cinetalk_card_head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.cinetalk_card_main {
+  width: min(90vw, 645px);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(28px);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cinetalk_card_top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cinetalk_card_tit h3 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.cinetalk_card_body h3 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.cinetalk_card_place {
+  margin: 4px 0 0;
+  font-size: 14px;
+}
+
+.cinetalk_card_review {
+  margin: 12px 0 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.cinetalk_card_bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-top: 1px solid var(--color_white);
+  padding-top: 20px;
+}
+
+.cinetalk_card_btns {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cinetalk_user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cinetalk_user_avatar {
+  width: 36px;
+  height: 36px;
+}
+
+.cinetalk_user_name {
+  display: block;
+  font-family: "Intel One Mono", monospace;
+  font-size: 15px;
+  color: #565656;
+}
+
+.cinetalk_user_time {
+  display: block;
+  font-size: 12px;
+  color: #434343;
+}
+
+.cinetalk_stars {
+  display: flex;
+  gap: 3px;
+}
+
+.cinetalk_stars img {
+  width: 18px;
+  height: 18px;
+}
+
+.cinetalk_card_main .cinetalk_stars img {
+  width: 22px;
+  height: 22px;
+}
+
+.cinetalk_nav {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 32px;
+}
+
+.cinetalk_nav_btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color_white);
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.cinetalk_nav_btn img {
+  width: 22px;
+  height: 22px;
+}
+
+.cinetalk_foot_text {
+  position: relative;
+  margin: 40px 0 0;
+  color: var(--color_white);
+  font-weight: 300;
+  font-size: clamp(16px, 2.5vw, 26px);
+}
+
+/* ==========================================================================
+   COMING
+   ========================================================================== */
+.section_coming {
+  background: var(--color_yellow);
+  padding: 60px var(--section_pad_x);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(24px, 5vw, 80px);
+}
+
+.coming_poster {
+  flex: 0 1 380px;
+  max-width: 420px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.coming_content {
+  flex: 1 1 480px;
+  max-width: 727px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.coming_top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.coming_title {
+  margin: 0;
+  font-family: var(--font_almarai);
+  font-weight: 800;
+  font-size: clamp(48px, 8vw, 100px);
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.coming_bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.coming_feature {
+  flex: 1 1 300px;
+  max-width: 363px;
+  background: rgba(255, 255, 255, 0.29);
+  border-radius: 30px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.coming_feature_date {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.coming_feature_date .day {
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--color_white);
+}
+
+.coming_feature_date .month {
+  font-family: var(--font_bebas);
+  font-size: 20px;
+}
+
+.coming_feature_tag {
+  margin: 0;
+  font-family: var(--font_almarai);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.coming_feature_desc,
+.coming_feature_meta {
+  margin: 8px 0 0;
+  font-family: var(--font_almarai);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.coming_feature_title {
+  margin: 12px 0 0;
+  text-transform: capitalize;
+}
+
+.coming_feature_title .en {
+  display: block;
+  font-family: var(--font_bebas);
+  font-size: clamp(32px, 4vw, 48px);
+}
+
+.coming_feature_title .ko {
+  display: block;
+  font-family: "HYShortSamul-Medium", var(--font_pretendard);
+  font-size: clamp(32px, 4vw, 48px);
+}
+
+.coming_list {
+  flex: 1 1 260px;
+  max-width: 289px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.coming_list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.coming_list img {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.coming_list span {
+  font-family: var(--font_almarai);
+  font-weight: 800;
+  font-size: clamp(16px, 2vw, 22px);
+  text-transform: capitalize;
+}
+
+/* ==========================================================================
+   ICECON
+   ========================================================================== */
+.section_icecon {
+  position: relative;
+  background: var(--color_white);
+  padding: 60px var(--section_pad_x);
+  min-height: 60vw;
+  max-height: 900px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.icecon_visual {
+  position: absolute;
+  inset: 0;
+}
+
+.icecon_visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.icecon_sub {
+  position: relative;
+  margin: 0;
+  color: var(--color_indigo);
+  font-size: clamp(20px, 3vw, 44px);
+  z-index: 1;
+}
+
+.icecon_title {
+  position: absolute;
+  left: var(--section_pad_x);
+  top: 22%;
+  margin: 0;
+  color: var(--color_indigo);
+  font-family: var(--font_inter);
+  font-weight: 700;
+  font-size: clamp(64px, 13vw, 180px);
+  z-index: 1;
+}
+
+.section_icecon .btn {
+  position: relative;
+  z-index: 1;
+  margin-left: auto;
+}
+
+/* ==========================================================================
+   INFO
+   ========================================================================== */
+.section_info {
+  background: var(--color_info_bg);
+  padding: 80px var(--section_pad_x);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.info_title {
+  margin: 0;
+  text-align: center;
+  color: var(--color_coral);
+}
+
+.info_title .light {
+  display: block;
+  font-family: var(--font_pretendard);
+  font-weight: 300;
+  font-size: clamp(28px, 5vw, 48px);
+}
+
+.info_title .bold {
+  display: block;
+  font-family: var(--font_pretendard);
+  font-weight: 600;
+  font-size: clamp(32px, 6vw, 56px);
+}
+
+.info_list {
+  width: 100%;
+  max-width: 1669px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+}
+
+.info_list li {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info_list img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius_card);
+  background: var(--color_white);
+}
+
+.info_list span {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color_black);
+}
+
+.info_view_all {
+  align-self: flex-end;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color_coral);
+  font-size: 16px;
+}
+
+.info_view_all_arrow {
+  width: 16px;
+  height: 16px;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.section_footer {
+  background: #4d4d4d;
+  color: var(--color_white);
+  padding: 40px var(--section_pad_x);
+}
+
+.footer_company {
+  margin: 0 0 6px;
+  font-size: 20px;
+}
+
+.footer_links {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.footer_links a:hover,
+.footer_links a:focus-visible {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   반응형 — 768px / 360px
+   디자인 원본은 1920px 데스크톱만 제공되어, 아래 두 구간은
+   레이아웃을 1~2열로 재배치하는 방식으로 유연 대응함 (design-analysis.md 참고)
+   ========================================================================== */
+@media (max-width: 1279px) {
+  .info_list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .icecon_title {
+    top: 16%;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero_header {
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 20px;
+    min-width: 0;
+  }
+
+  .hero_header_left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .hero_nav {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .hero_nav ul {
+    flex-wrap: wrap;
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .section_hero {
+    min-height: 100vh;
+  }
+
+  .archive_card_director {
+    width: min(90vw, 340px);
+  }
+
+  .foryou_ticket {
+    grid-template-columns: 1fr;
+  }
+
+  .foryou_ticket_credit,
+  .foryou_ticket_status,
+  .foryou_ticket_open {
+    text-align: left;
+  }
+
+  .foryou_slide {
+    grid-template-columns: 1fr;
+  }
+
+  .foryou_slide_img {
+    aspect-ratio: 16 / 10;
+  }
+
+  .cinetalk_card_main,
+  .cinetalk_card_side {
+    width: min(88vw, 370px);
+  }
+
+  .section_coming {
+    flex-direction: column;
+  }
+
+  .coming_bottom {
+    flex-direction: column;
+  }
+
+  .coming_title {
+    text-align: center;
+    width: 100%;
+  }
+
+  .coming_top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section_icecon {
+    min-height: 100vw;
+  }
+
+  .icecon_title {
+    font-size: clamp(48px, 18vw, 96px);
+  }
+
+  .info_list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .info_list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
