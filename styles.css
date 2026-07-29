@@ -911,19 +911,26 @@ button {
    ========================================================================== */
 .section_coming {
   background: var(--color_yellow);
-  padding: 60px var(--section_pad_x);
+  padding: 0 var(--section_pad_x);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  gap: clamp(24px, 5vw, 80px);
+  justify-content: flex-start;
+  gap: 44px;
 }
 
 .coming_poster {
-  flex: 0 1 380px;
-  max-width: 420px;
-  border-radius: 4px;
+  flex: 1 1 420px;
+  max-width: 685px;
+  aspect-ratio: 685 / 980;
   overflow: hidden;
+}
+
+.coming_poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .coming_content {
@@ -931,15 +938,13 @@ button {
   max-width: 727px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 29px;
 }
 
 .coming_top {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
+  flex-direction: column;
+  gap: clamp(32px, 6vw, 80px);
 }
 
 .coming_title {
@@ -947,14 +952,27 @@ button {
   font-family: var(--font_almarai);
   font-weight: 800;
   font-size: clamp(48px, 8vw, 100px);
-  line-height: 0.9;
+  line-height: 0.85;
   text-transform: uppercase;
+}
+
+.coming_date_btn {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.coming_btn {
+  width: 162px;
+  padding: 0;
+  font-size: 20px;
 }
 
 .coming_bottom {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  align-items: flex-start;
+  gap: clamp(28px, 4vw, 50px);
 }
 
 .coming_feature {
@@ -962,27 +980,52 @@ button {
   max-width: 363px;
   background: rgba(255, 255, 255, 0.29);
   border-radius: 30px;
-  padding: 30px;
+  padding: 28px 30px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px;
+}
+
+.coming_feature_info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
 }
 
 .coming_feature_date {
   display: flex;
-  align-items: baseline;
-  gap: 14px;
+  align-items: center;
+  gap: 18px;
 }
 
 .coming_feature_date .day {
-  font-size: 44px;
-  font-weight: 700;
+  font-family: "Erica One", cursive;
+  font-size: 54px;
+  font-weight: 400;
+  line-height: 1;
   color: var(--color_white);
 }
 
 .coming_feature_date .month {
   font-family: var(--font_bebas);
-  font-size: 20px;
+  font-size: 22px;
+}
+
+.coming_feature_text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  padding-left: 10px;
+  font-size: 14px;
+}
+
+.coming_feature_head {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
 }
 
 .coming_feature_tag {
@@ -995,27 +1038,31 @@ button {
 
 .coming_feature_desc,
 .coming_feature_meta {
-  margin: 8px 0 0;
+  margin: 0;
   font-family: var(--font_almarai);
+  font-weight: 400;
   font-size: 13px;
   line-height: 1.6;
 }
 
 .coming_feature_title {
-  margin: 12px 0 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
   text-transform: capitalize;
 }
 
 .coming_feature_title .en {
-  display: block;
   font-family: var(--font_bebas);
-  font-size: clamp(32px, 4vw, 48px);
+  font-size: clamp(32px, 4vw, 54px);
+  line-height: 1.1;
 }
 
 .coming_feature_title .ko {
-  display: block;
   font-family: "HYShortSamul-Medium", var(--font_pretendard);
-  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 800;
+  font-size: clamp(32px, 4vw, 54px);
+  line-height: 1.1;
 }
 
 .coming_list {
@@ -1023,7 +1070,7 @@ button {
   max-width: 289px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 28px;
 }
 
 .coming_list li {
@@ -1033,10 +1080,9 @@ button {
 }
 
 .coming_list img {
-  width: 120px;
-  height: 80px;
+  width: 164px;
+  height: 108px;
   object-fit: cover;
-  border-radius: 4px;
   flex-shrink: 0;
 }
 
@@ -1269,6 +1315,7 @@ button {
 
   .section_coming {
     flex-direction: column;
+    padding: 40px var(--section_pad_x);
   }
 
   .coming_bottom {
@@ -1280,9 +1327,8 @@ button {
     width: 100%;
   }
 
-  .coming_top {
-    flex-direction: column;
-    align-items: center;
+  .coming_date_btn {
+    justify-content: center;
   }
 
   .section_icecon {

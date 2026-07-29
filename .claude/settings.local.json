@@ -5,7 +5,9 @@
       "PowerShell(Test-NetConnection -ComputerName 127.0.0.1 -Port 3845 -WarningAction SilentlyContinue)",
       "PowerShell(Get-Process -Name \"Figma\" -ErrorAction SilentlyContinue)",
       "PowerShell($r = Test-NetConnection -ComputerName 127.0.0.1 -Port 3845 -WarningAction SilentlyContinue; \"Port 3845 open: $\\($r.TcpTestSucceeded\\)\"; $p = Get-Process -Name Figma -ErrorAction SilentlyContinue; \"Figma processes: $\\($p.Count\\)\")",
-      "mcp__claude_ai_Figma__download_assets"
+      "mcp__claude_ai_Figma__download_assets",
+      "mcp__d0c7696f-0a8b-4b8c-91ac-51b84bfad355__get_metadata",
+      "mcp__claude_ai_Figma__get_design_context"
     ],
     "defaultMode": "auto"
   }
