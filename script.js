@@ -5,6 +5,8 @@
   var RECENT_MOVIES_LIMIT = 10;
   var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  var HERO_VIDEO_INTRO_SKIP = 1.5;
+
   function handleHeroVideoMotion() {
     var video = document.querySelector(".hero_video");
     if (!video) return;
@@ -13,7 +15,25 @@
       video.removeAttribute("autoplay");
       video.pause();
       video.currentTime = 0;
+      return;
     }
+
+    function skipIntro() {
+      if (video.duration && video.duration > HERO_VIDEO_INTRO_SKIP + 1) {
+        video.currentTime = HERO_VIDEO_INTRO_SKIP;
+      }
+    }
+
+    if (video.readyState >= 1) {
+      skipIntro();
+    } else {
+      video.addEventListener("loadedmetadata", skipIntro, { once: true });
+    }
+
+    video.addEventListener("ended", function () {
+      video.currentTime = HERO_VIDEO_INTRO_SKIP;
+      video.play();
+    });
   }
 
   function readRecentMovies() {
@@ -140,10 +160,85 @@
     });
   }
 
+  function initIceconCarousel() {
+    var track = document.querySelector("[data-icecon-track]");
+    if (!track) return;
+
+    var ROTATE_SENSITIVITY = 0.3; // deg per px dragged
+    var AUTO_SPEED = 0.008; // deg per ms, idle auto-rotate speed
+    var FRICTION = 0.97; // per ~16ms frame, momentum decay back toward AUTO_SPEED
+
+    var rotation = 0;
+    var velocity = AUTO_SPEED; // deg per ms
+    var dragging = false;
+    var lastPointerX = 0;
+    var lastPointerT = 0;
+    var lastDragVelocity = 0;
+    var lastFrameT = null;
+
+    function applyRotation() {
+      track.style.transform = "rotateZ(-20deg) rotateX(-8deg) rotateY(" + rotation + "deg)";
+    }
+
+    if (prefersReducedMotion) {
+      applyRotation();
+    } else {
+      requestAnimationFrame(function frame(t) {
+        if (lastFrameT === null) lastFrameT = t;
+        var dt = t - lastFrameT;
+        lastFrameT = t;
+
+        if (!dragging) {
+          rotation += velocity * dt;
+          var decay = Math.pow(FRICTION, dt / 16);
+          velocity = AUTO_SPEED + (velocity - AUTO_SPEED) * decay;
+          applyRotation();
+        }
+        requestAnimationFrame(frame);
+      });
+    }
+
+    function onPointerDown(event) {
+      dragging = true;
+      lastPointerX = event.clientX;
+      lastPointerT = performance.now();
+      lastDragVelocity = 0;
+      track.classList.add("is_dragging");
+      track.setPointerCapture(event.pointerId);
+    }
+
+    function onPointerMove(event) {
+      if (!dragging) return;
+      var now = performance.now();
+      var dx = event.clientX - lastPointerX;
+      var dt = now - lastPointerT || 16;
+      var deltaDeg = dx * ROTATE_SENSITIVITY;
+      rotation += deltaDeg;
+      lastDragVelocity = deltaDeg / dt;
+      lastPointerX = event.clientX;
+      lastPointerT = now;
+      applyRotation();
+    }
+
+    function onPointerUp(event) {
+      if (!dragging) return;
+      dragging = false;
+      track.classList.remove("is_dragging");
+      track.releasePointerCapture(event.pointerId);
+      velocity = lastDragVelocity || AUTO_SPEED;
+    }
+
+    track.addEventListener("pointerdown", onPointerDown);
+    track.addEventListener("pointermove", onPointerMove);
+    track.addEventListener("pointerup", onPointerUp);
+    track.addEventListener("pointercancel", onPointerUp);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     handleHeroVideoMotion();
     initAllCarousels();
     initForyouSwiper();
+    initIceconCarousel();
     document.addEventListener("click", handlePlaceholderLinkClick);
   });
 })();

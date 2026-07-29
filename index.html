@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Almarai:wght@400;700;800&family=Inter:wght@400;500;600;700;800&family=Erica+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Almarai:wght@400;700;800&family=Inter:wght@400;500;600;700;800&family=Erica+One&family=Plus+Jakarta+Sans:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -21,7 +21,7 @@
 <!-- ================= HERO ================= -->
 <section id="hero" class="section_hero" aria-label="대표 상영작">
   <div class="hero_media">
-    <video class="hero_video" autoplay muted loop playsinline
+    <video class="hero_video" autoplay muted playsinline
       poster="assets/figma/hero_main_poster.png"
       aria-hidden="true">
       <source src="assets/The Super Mario Galaxy Movie – Yoshi First Look.mp4" type="video/mp4">
@@ -30,7 +30,7 @@
   </div>
 
   <header class="hero_header">
-    <div class="hero_header_left">
+    <div class="hero_side_left">
       <a href="#hero" class="hero_logo">
         <img src="assets/figma/hero_logo.png" alt="CGV 홈으로 이동">
       </a>
@@ -45,7 +45,7 @@
         </ul>
       </nav>
     </div>
-    <div class="hero_header_right">
+    <div class="hero_side_right">
       <a href="#" class="icon_btn" aria-label="검색">
         <img src="assets/figma/icon_search.svg" alt="">
       </a>
@@ -105,11 +105,12 @@
         </div>
       </li>
       <li class="archive_card archive_card_actor">
-        <img src="assets/archive02.png" alt="가장 많은 작품을 감상한 배우">
+        <img class="archive_card_img_base" src="assets/archive02.png" alt="가장 많은 작품을 감상한 배우">
+        <img class="archive_card_img_hover" src="assets/archive02_원본.png" alt="" aria-hidden="true">
         <span class="archive_card_label">Actor</span>
       </li>
       <li class="archive_card archive_card_empty">
-        <span class="archive_card_label">Actor</span>
+        <span class="archive_card_label">Stats</span>
       </li>
     </ul>
   </div>
@@ -131,17 +132,21 @@
         <img class="foryou_goods_img" src="assets/figma/foryou_yoshi_popcorn.png" alt="요시 팝콘통 굿즈 이미지">
       </div>
       <div class="foryou_ticket_info">
-        <p class="foryou_ticket_status">3차 미리구매</p>
-        <p class="foryou_ticket_open">OPEN</p>
-        <h3 class="foryou_ticket_name">요시 팝콘통</h3>
-        <p class="foryou_ticket_credit">
-          감독 장 뤽 고다르<br>
-          출연
-          <a href="https://namu.wiki/w/%EB%B8%8C%EB%A6%AC%EC%A7%80%ED%8A%B8%20%EB%B0%94%EB%A5%B4%EB%8F%84" target="_blank" rel="noopener">브리지트 바르도</a>,
-          <a href="https://namu.wiki/w/%EB%AF%B8%EC%85%B8%20%ED%94%BC%EC%BD%9C%EB%A6%AC" target="_blank" rel="noopener">미셸 피콜리</a>,
-          <a href="https://namu.wiki/w/%ED%94%84%EB%A6%AC%EC%B8%A0%20%EB%9E%91" target="_blank" rel="noopener">프리츠 랑</a> 외
-        </p>
-        <a href="#" class="btn btn_outline_dark" data-movie-title="요시 팝콘통">예약하기</a>
+        <div class="foryou_ticket_top">
+          <h3 class="foryou_ticket_name">요시 팝콘통</h3>
+          <p class="foryou_ticket_status">3차 미리구매</p>
+          <p class="foryou_ticket_open">OPEN</p>
+        </div>
+        <div class="foryou_ticket_bottom">
+          <p class="foryou_ticket_credit">
+            감독 장 뤽 고다르<br>
+            출연
+            <a href="https://namu.wiki/w/%EB%B8%8C%EB%A6%AC%EC%A7%80%ED%8A%B8%20%EB%B0%94%EB%A5%B4%EB%8F%84" target="_blank" rel="noopener">브리지트 바르도</a>,
+            <a href="https://namu.wiki/w/%EB%AF%B8%EC%85%B8%20%ED%94%BC%EC%BD%9C%EB%A6%AC" target="_blank" rel="noopener">미셸 피콜리</a>,
+            <a href="https://namu.wiki/w/%ED%94%84%EB%A6%AC%EC%B8%A0%20%EB%9E%91" target="_blank" rel="noopener">프리츠 랑</a> 외
+          </p>
+          <a href="#" class="btn btn_outline_dark foryou_btn" data-movie-title="요시 팝콘통">예약하기</a>
+        </div>
       </div>
     </div>
   </div>
@@ -159,10 +164,14 @@
             <img src="assets/foryou03.png" alt="듄: 파트2 스틸컷">
           </div>
           <div class="foryou_slide_content">
-            <p class="foryou_slide_reason">IMAX로 더욱 몰입감 있게 즐길 수 있는 작품을 추천해드려요.</p>
-            <h3 class="foryou_slide_title">듄: 파트2</h3>
-            <p class="foryou_slide_meta">2시간 46분 · 액션 · 12세</p>
-            <a href="#" class="btn btn_outline_dark" data-movie-title="듄: 파트2">예매하기</a>
+            <div class="foryou_slide_text">
+              <p class="foryou_slide_reason">IMAX로 더욱 몰입감 있게 즐길 수 있는 작품을 추천해드려요.</p>
+              <div class="foryou_slide_movie">
+                <h3 class="foryou_slide_title">듄: 파트2</h3>
+                <p class="foryou_slide_meta">2시간 46분 · 액션 · 12세</p>
+              </div>
+            </div>
+            <a href="#" class="btn btn_outline_dark foryou_btn" data-movie-title="듄: 파트2">예매하기</a>
           </div>
         </li>
         <li class="swiper-slide foryou_slide" style="--slide-bg:#F0CFCD">
@@ -170,10 +179,14 @@
             <img src="assets/foryou01.png" alt="린다린다린다 스틸컷">
           </div>
           <div class="foryou_slide_content">
-            <p class="foryou_slide_reason">최근 즐겨본 영화를 바탕으로 추천해드려요</p>
-            <h3 class="foryou_slide_title">린다린다린다</h3>
-            <p class="foryou_slide_meta">1시간 54분 · 코미디, 드라마 · 12세</p>
-            <a href="#" class="btn btn_outline_dark" data-movie-title="린다린다린다">예매하기</a>
+            <div class="foryou_slide_text">
+              <p class="foryou_slide_reason">최근 즐겨본 영화를 바탕으로 추천해드려요</p>
+              <div class="foryou_slide_movie">
+                <h3 class="foryou_slide_title">린다린다린다</h3>
+                <p class="foryou_slide_meta">1시간 54분 · 코미디, 드라마 · 12세</p>
+              </div>
+            </div>
+            <a href="#" class="btn btn_outline_dark foryou_btn" data-movie-title="린다린다린다">예매하기</a>
           </div>
         </li>
         <li class="swiper-slide foryou_slide" style="--slide-bg:#C4D4B6">
@@ -181,10 +194,14 @@
             <img src="assets/foryou02.png" alt="경멸 재개봉 이미지">
           </div>
           <div class="foryou_slide_content">
-            <p class="foryou_slide_reason">좋아하는 <strong>장 뤽 고다르</strong> 감독의 재개봉작을 추천해드려요.</p>
-            <h3 class="foryou_slide_title">경멸</h3>
-            <p class="foryou_slide_meta">1시간 44분 · 드라마 · 15세</p>
-            <a href="#" class="btn btn_outline_dark" data-movie-title="경멸">예매하기</a>
+            <div class="foryou_slide_text">
+              <p class="foryou_slide_reason">좋아하는 <strong>장 뤽 고다르</strong> 감독의 재개봉작을 추천해드려요.</p>
+              <div class="foryou_slide_movie">
+                <h3 class="foryou_slide_title">경멸</h3>
+                <p class="foryou_slide_meta">1시간 44분 · 드라마 · 15세</p>
+              </div>
+            </div>
+            <a href="#" class="btn btn_outline_dark foryou_btn" data-movie-title="경멸">예매하기</a>
           </div>
         </li>
       </ul>
@@ -241,8 +258,8 @@
             <p class="cinetalk_card_place">용산 CGV 2D</p>
           </div>
           <div class="cinetalk_card_btns">
-            <a href="#" class="btn btn_fill_white btn_sm">리뷰 더보기</a>
-            <a href="#" class="btn btn_fill_white btn_sm" data-movie-title="너바나 더 밴드">예매하기</a>
+            <a href="#" class="btn btn_fill_white">리뷰 더보기</a>
+            <a href="#" class="btn btn_fill_white" data-movie-title="너바나 더 밴드">예매하기</a>
           </div>
         </div>
         <p class="cinetalk_card_review">엉뚱한 생각에 엉뚱한 말들을 내뱉는 엉뚱한 배우들의 연기가 좋았습니다. 백 투 더 퓨처와 나비효과를 섞은 듯한 느낌의 뻔하지만 재미있는 영화였습니다.</p>
@@ -341,19 +358,19 @@
 
       <ul class="coming_list">
         <li>
-          <img src="assets/coming_오디세이.png" alt="오디세이 포스터">
+          <img src="assets/coming_list01.png" alt="오디세이 포스터">
           <span>오디세이</span>
         </li>
         <li>
-          <img src="assets/coming_hope.png" alt="HOPE 포스터">
+          <img src="assets/coming_list02.png" alt="HOPE 포스터">
           <span>HOPE</span>
         </li>
         <li>
-          <img src="assets/coming_중경삼림_edit.png" alt="중경삼림 리마스터링 포스터">
+          <img src="assets/coming_list03.png" alt="중경삼림 리마스터링 포스터">
           <span>중경삼림<br>리마스터링</span>
         </li>
         <li>
-          <img src="assets/coming_토이스토리.png" alt="토이스토리5 포스터">
+          <img src="assets/coming_list04.png" alt="토이스토리5 포스터">
           <span>토이스토리5</span>
         </li>
       </ul>
@@ -363,15 +380,68 @@
 
 <!-- ================= ICECON ================= -->
 <section id="icecon" class="section_icecon" aria-labelledby="icecon_title">
-  <div class="icecon_visual">
-    <img src="assets/figma/icecon_banner.png" alt="ICECON 현장 이미지">
+  <div class="icecon_frame">
+    <div class="icecon_visual">
+      <div class="icecon_carousel" data-icecon-carousel>
+        <ul class="icecon_carousel_track" data-icecon-track>
+          <li class="icecon_carousel_item">
+            <div class="icecon_carousel_card">
+              <div class="icecon_carousel_face icecon_carousel_face_front"><img src="assets/icecon01.png" alt="테일러 스위프트: 디 에라스 투어"></div>
+              <div class="icecon_carousel_face icecon_carousel_face_back"></div>
+            </div>
+          </li>
+          <li class="icecon_carousel_item">
+            <div class="icecon_carousel_card">
+              <div class="icecon_carousel_face icecon_carousel_face_front"><img src="assets/icecon02.png" alt="쏜애플 불구경 2024 라이브 콘서트 필름"></div>
+              <div class="icecon_carousel_face icecon_carousel_face_back"></div>
+     테일러 스위프트: 디 에라스 투어쏜애플 불구경 2024 라이브 콘서트 필름식스데이즈함께 날아오르다: 레드불 T1 다큐멘터리2026 KBO 올스타전 나눔 VS 드림아이유 콘서트: 더 위닝하이라이트: 라이츠 고 온, 어게인 인 시네마2026 신한 SOL KBO 리그 극장단독 생중계       </div>
+          </li>
+          <li class="icecon_carousel_item">
+            <div class="icecon_carousel_card">
+              <div class="icecon_carousel_face icecon_carousel_face_front"><img src="assets/icecon03.png" alt="식스데이즈"></div>
+              <div class="icecon_carousel_face icecon_carousel_face_back"></div>
+            </div>
+          </li>
+          <li class="icecon_carousel_item">
+            <div class="icecon_carousel_card">
+              <div class="icecon_carousel_face icecon_carousel_face_front"><img src="assets/icecon04.png" alt="함께 날아오르다: 레드불 T1 다큐멘터리"></div>
+              <div class="icecon_carousel_face icecon_carousel_face_back"></div>
+            </div>
+          </li>
+          <li class="icecon_carousel_item">
+            <div class="icecon_carousel_card">
+              <div class="icecon_carousel_face icecon_carousel_face_front"><img src="assets/icecon05.png" alt="2026 KBO 올스타전 나눔 VS 드림"></div>
+              <div class="icecon_carousel_face icecon_carousel_face_back"></div>
+            </div>
+          </li>
+          <li class="icecon_carousel_item">
+            <div class="icecon_carousel_card">
+              <div class="icecon_carousel_face icecon_carousel_face_front"><img src="assets/icecon06.png" alt="아이유 콘서트: 더 위닝"></div>
+              <div class="icecon_carousel_face icecon_carousel_face_back"></div>
+            </div>
+          </li>
+          <li class="icecon_carousel_item">
+            <div class="icecon_carousel_card">
+              <div class="icecon_carousel_face icecon_carousel_face_front"><img src="assets/icecon07.png" alt="하이라이트: 라이츠 고 온, 어게인 인 시네마"></div>
+              <div class="icecon_carousel_face icecon_carousel_face_back"></div>
+            </div>
+          </li>
+          <li class="icecon_carousel_item">
+            <div class="icecon_carousel_card">
+              <div class="icecon_carousel_face icecon_carousel_face_front"><img src="assets/icecon08.png" alt="2026 신한 SOL KBO 리그 극장단독 생중계"></div>
+              <div class="icecon_carousel_face icecon_carousel_face_back"></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <p class="icecon_sub">현장의 함성을 그대로</p>
+    <h2 id="icecon_title" class="icecon_title">ice con</h2>
+    <a href="#" class="btn btn_fill_grey" data-movie-title="ICECON">
+      예매하기
+      <img src="assets/figma/icon_arrow_right_white.svg" alt="">
+    </a>
   </div>
-  <p class="icecon_sub">현장의 함성을 그대로</p>
-  <h2 id="icecon_title" class="icecon_title">ice con</h2>
-  <a href="#" class="btn btn_fill_grey" data-movie-title="ICECON">
-    예매하기
-    <img src="assets/figma/icon_arrow_right_white.svg" alt="">
-  </a>
 </section>
 
 <!-- ================= INFO ================= -->

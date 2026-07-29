@@ -7,7 +7,16 @@
       "PowerShell($r = Test-NetConnection -ComputerName 127.0.0.1 -Port 3845 -WarningAction SilentlyContinue; \"Port 3845 open: $\\($r.TcpTestSucceeded\\)\"; $p = Get-Process -Name Figma -ErrorAction SilentlyContinue; \"Figma processes: $\\($p.Count\\)\")",
       "mcp__claude_ai_Figma__download_assets",
       "mcp__d0c7696f-0a8b-4b8c-91ac-51b84bfad355__get_metadata",
-      "mcp__claude_ai_Figma__get_design_context"
+      "mcp__claude_ai_Figma__get_design_context",
+      "mcp__d0c7696f-0a8b-4b8c-91ac-51b84bfad355__get_design_context",
+      "Bash(mkdir -p \"C:/박건영/설화수/assets\")",
+      "Bash(cp \"C:/박건영/sulwhasoo-redesign/assets/\"*.png \"C:/박건영/설화수/assets/\")",
+      "Bash(rm -rf \"C:/박건영/sulwhasoo-redesign\")",
+      "Read(//c/박건영/설화수/**)",
+      "PowerShell($n = Get-Command node -ErrorAction SilentlyContinue; if\\($n\\){ \"node: $\\($n.Source\\)\"; node --version } else { \"no node\" })",
+      "PowerShell(Start-Process powershell -ArgumentList '-NoProfile','-ExecutionPolicy','Bypass','-File','C:\\\\박건영\\\\설화수\\\\server.ps1' -WindowStyle Hidden; Start-Sleep -Seconds 2; try { \\(Invoke-WebRequest -Uri 'http://127.0.0.1:8791/index.html' -UseBasicParsing -TimeoutSec 5\\).StatusCode } catch { \"ERR: $\\($_.Exception.Message\\)\" })",
+      "Bash(powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"C:\\\\박건영\\\\설화수\\\\server.ps1\")",
+      "PowerShell(Start-Sleep -Seconds 2; try { $r = Invoke-WebRequest -Uri 'http://127.0.0.1:8791/index.html' -UseBasicParsing -TimeoutSec 5; \"OK $\\($r.StatusCode\\) len=$\\($r.RawContentLength\\)\" } catch { \"ERR: $\\($_.Exception.Message\\)\" })"
     ],
     "defaultMode": "auto"
   }
