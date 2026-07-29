@@ -97,9 +97,53 @@
     document.querySelectorAll("[data-carousel]").forEach(initCarousel);
   }
 
+  function handleDuplicateSlidesForLoop(wrapper) {
+    /* Swiper의 loop 모드는 슬라이드 수가 너무 적으면(3개) 순환 시 깨진다.
+       공식 권장대로 원본 슬라이드를 반복 복제해 개수를 늘린다. */
+    var originalSlides = Array.prototype.slice.call(wrapper.children);
+    for (var i = 0; i < 3; i++) {
+      originalSlides.forEach(function (slide) {
+        wrapper.appendChild(slide.cloneNode(true));
+      });
+    }
+  }
+
+  function initForyouSwiper() {
+    var el = document.querySelector(".foryou_swiper");
+    if (!el || typeof Swiper === "undefined") return;
+
+    var wrapper = el.querySelector(".swiper-wrapper");
+    if (wrapper) {
+      handleDuplicateSlidesForLoop(wrapper);
+    }
+
+    new Swiper(el, {
+      slidesPerView: "auto",
+      centeredSlides: true,
+      loop: true,
+      loopAdditionalSlides: 8,
+      observer: true,
+      observeParents: true,
+      initialSlide: 1,
+      speed: prefersReducedMotion ? 0 : 500,
+      grabCursor: true,
+      autoplay: prefersReducedMotion
+        ? false
+        : {
+            delay: 2500,
+            disableOnInteraction: false,
+          },
+      navigation: {
+        prevEl: "[data-foryou-prev]",
+        nextEl: "[data-foryou-next]",
+      },
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     handleHeroVideoMotion();
     initAllCarousels();
+    initForyouSwiper();
     document.addEventListener("click", handlePlaceholderLinkClick);
   });
 })();

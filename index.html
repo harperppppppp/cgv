@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Almarai:wght@400;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -110,9 +111,6 @@
       <li class="archive_card archive_card_empty">
         <span class="archive_card_label">Actor</span>
       </li>
-      <li class="archive_card archive_card_empty">
-        <span class="archive_card_label">Actor</span>
-      </li>
     </ul>
   </div>
 </section>
@@ -149,48 +147,50 @@
   </div>
 
   <!-- 추천 캐러셀 -->
-  <div class="foryou_carousel" data-carousel>
-    <button type="button" class="carousel_arrow carousel_arrow_prev" data-carousel-prev aria-label="이전 추천작">
+  <div class="foryou_carousel">
+    <button type="button" class="carousel_arrow carousel_arrow_prev" data-foryou-prev aria-label="이전 추천작">
       <img src="assets/figma/icon_carousel_arrow_left.svg" alt="">
     </button>
 
-    <ul class="foryou_track" data-carousel-track>
-      <li class="foryou_slide" style="--slide-bg:#F8DBA4">
-        <div class="foryou_slide_img">
-          <img src="assets/figma/foryou_dune.png" alt="듄: 파트2 스틸컷">
-        </div>
-        <div class="foryou_slide_content">
-          <p class="foryou_slide_reason">IMAX로 더욱 몰입감 있게 즐길 수 있는 작품을 추천해드려요.</p>
-          <h3 class="foryou_slide_title">듄: 파트2</h3>
-          <p class="foryou_slide_meta">2시간 46분 · 액션 · 12세</p>
-          <a href="#" class="btn btn_outline_dark" data-movie-title="듄: 파트2">예매하기</a>
-        </div>
-      </li>
-      <li class="foryou_slide" style="--slide-bg:#F0CFCD">
-        <div class="foryou_slide_img">
-          <img src="assets/foryou01.png" alt="린다린다린다 스틸컷">
-        </div>
-        <div class="foryou_slide_content">
-          <p class="foryou_slide_reason">최근 즐겨본 영화를 바탕으로 추천해드려요</p>
-          <h3 class="foryou_slide_title">린다린다린다</h3>
-          <p class="foryou_slide_meta">1시간 54분 · 코미디, 드라마 · 12세</p>
-          <a href="#" class="btn btn_outline_dark" data-movie-title="린다린다린다">예매하기</a>
-        </div>
-      </li>
-      <li class="foryou_slide" style="--slide-bg:#C4D4B6">
-        <div class="foryou_slide_img">
-          <img src="assets/figma/foryou_contempt_forest.png" alt="경멸 재개봉 이미지">
-        </div>
-        <div class="foryou_slide_content">
-          <p class="foryou_slide_reason">좋아하는 <strong>장 뤽 고다르</strong> 감독의 재개봉작을 추천해드려요.</p>
-          <h3 class="foryou_slide_title">경멸</h3>
-          <p class="foryou_slide_meta">1시간 44분 · 드라마 · 15세</p>
-          <a href="#" class="btn btn_outline_dark" data-movie-title="경멸">예매하기</a>
-        </div>
-      </li>
-    </ul>
+    <div class="swiper foryou_swiper">
+      <ul class="swiper-wrapper foryou_track">
+        <li class="swiper-slide foryou_slide" style="--slide-bg:#F8DBA4">
+          <div class="foryou_slide_img">
+            <img src="assets/foryou03.png" alt="듄: 파트2 스틸컷">
+          </div>
+          <div class="foryou_slide_content">
+            <p class="foryou_slide_reason">IMAX로 더욱 몰입감 있게 즐길 수 있는 작품을 추천해드려요.</p>
+            <h3 class="foryou_slide_title">듄: 파트2</h3>
+            <p class="foryou_slide_meta">2시간 46분 · 액션 · 12세</p>
+            <a href="#" class="btn btn_outline_dark" data-movie-title="듄: 파트2">예매하기</a>
+          </div>
+        </li>
+        <li class="swiper-slide foryou_slide" style="--slide-bg:#F0CFCD">
+          <div class="foryou_slide_img">
+            <img src="assets/foryou01.png" alt="린다린다린다 스틸컷">
+          </div>
+          <div class="foryou_slide_content">
+            <p class="foryou_slide_reason">최근 즐겨본 영화를 바탕으로 추천해드려요</p>
+            <h3 class="foryou_slide_title">린다린다린다</h3>
+            <p class="foryou_slide_meta">1시간 54분 · 코미디, 드라마 · 12세</p>
+            <a href="#" class="btn btn_outline_dark" data-movie-title="린다린다린다">예매하기</a>
+          </div>
+        </li>
+        <li class="swiper-slide foryou_slide" style="--slide-bg:#C4D4B6">
+          <div class="foryou_slide_img">
+            <img src="assets/foryou02.png" alt="경멸 재개봉 이미지">
+          </div>
+          <div class="foryou_slide_content">
+            <p class="foryou_slide_reason">좋아하는 <strong>장 뤽 고다르</strong> 감독의 재개봉작을 추천해드려요.</p>
+            <h3 class="foryou_slide_title">경멸</h3>
+            <p class="foryou_slide_meta">1시간 44분 · 드라마 · 15세</p>
+            <a href="#" class="btn btn_outline_dark" data-movie-title="경멸">예매하기</a>
+          </div>
+        </li>
+      </ul>
+    </div>
 
-    <button type="button" class="carousel_arrow carousel_arrow_next" data-carousel-next aria-label="다음 추천작">
+    <button type="button" class="carousel_arrow carousel_arrow_next" data-foryou-next aria-label="다음 추천작">
       <img src="assets/figma/icon_carousel_arrow_right.svg" alt="">
     </button>
   </div>
@@ -412,6 +412,7 @@
   </p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
