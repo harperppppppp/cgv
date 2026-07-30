@@ -1,0 +1,23 @@
+<svg width="500" height="205" viewBox="0 0 500 205" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CGV 팝콘 글자 로고">
+  <title>CGV Popcorn Lettermark</title>
+
+  <!-- ===== black outline layer (r=27) ===== -->
+  <g fill="#1b1b1b">
+    <!-- C -->
+    <circle cx="119" cy="53" r="27"/><circle cx="91" cy="45" r="27"/><circle cx="63" cy="52" r="27"/><circle cx="43" cy="72" r="27"/><circle cx="35" cy="100" r="27"/><circle cx="43" cy="128" r="27"/><circle cx="63" cy="148" r="27"/><circle cx="91" cy="155" r="27"/><circle cx="119" cy="147" r="27"/>
+    <!-- G -->
+    <circle cx="279" cy="53" r="27"/><circle cx="251" cy="45" r="27"/><circle cx="223" cy="52" r="27"/><circle cx="203" cy="72" r="27"/><circle cx="195" cy="100" r="27"/><circle cx="203" cy="128" r="27"/><circle cx="223" cy="148" r="27"/><circle cx="251" cy="155" r="27"/><circle cx="279" cy="147" r="27"/><circle cx="263" cy="100" r="27"/><circle cx="287" cy="100" r="27"/><circle cx="307" cy="124" r="27"/><circle cx="307" cy="148" r="27"/>
+    <!-- V -->
+    <circle cx="365" cy="50" r="27"/><circle cx="376" cy="76" r="27"/><circle cx="387" cy="102" r="27"/><circle cx="398" cy="128" r="27"/><circle cx="409" cy="154" r="27"/><circle cx="455" cy="50" r="27"/><circle cx="444" cy="76" r="27"/><circle cx="433" cy="102" r="27"/><circle cx="422" cy="128" r="27"/>
+  </g>
+
+  <!-- ===== popcorn kernels (r=22, cream + butter) ===== -->
+  <g>
+    <!-- C -->
+    <circle cx="119" cy="53" r="22" fill="#FFFDF5"/><circle cx="91" cy="45" r="22" fill="#FFE39A"/><circle cx="63" cy="52" r="22" fill="#FFFDF5"/><circle cx="43" cy="72" r="22" fill="#FFFDF5"/><circle cx="35" cy="100" r="22" fill="#FFE39A"/><circle cx="43" cy="128" r="22" fill="#FFFDF5"/><circle cx="63" cy="148" r="22" fill="#FFE39A"/><circle cx="91" cy="155" r="22" fill="#FFFDF5"/><circle cx="119" cy="147" r="22" fill="#FFFDF5"/>
+    <!-- G -->
+    <circle cx="279" cy="53" r="22" fill="#FFFDF5"/><circle cx="251" cy="45" r="22" fill="#FFFDF5"/><circle cx="223" cy="52" r="22" fill="#FFE39A"/><circle cx="203" cy="72" r="22" fill="#FFFDF5"/><circle cx="195" cy="100" r="22" fill="#FFFDF5"/><circle cx="203" cy="128" r="22" fill="#FFE39A"/><circle cx="223" cy="148" r="22" fill="#FFFDF5"/><circle cx="251" cy="155" r="22" fill="#FFFDF5"/><circle cx="279" cy="147" r="22" fill="#FFE39A"/><circle cx="263" cy="100" r="22" fill="#FFFDF5"/><circle cx="287" cy="100" r="22" fill="#FFE39A"/><circle cx="307" cy="124" r="22" fill="#FFFDF5"/><circle cx="307" cy="148" r="22" fill="#FFFDF5"/>
+    <!-- V -->
+    <circle cx="365" cy="50" r="22" fill="#FFFDF5"/><circle cx="376" cy="76" r="22" fill="#FFE39A"/><circle cx="387" cy="102" r="22" fill="#FFFDF5"/><circle cx="398" cy="128" r="22" fill="#FFFDF5"/><circle cx="409" cy="154" r="22" fill="#FFE39A"/><circle cx="455" cy="50" r="22" fill="#FFFDF5"/><circle cx="444" cy="76" r="22" fill="#FFFDF5"/><circle cx="433" cy="102" r="22" fill="#FFE39A"/><circle cx="422" cy="128" r="22" fill="#FFFDF5"/>
+  </g>
+</svg>

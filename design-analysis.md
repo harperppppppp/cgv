@@ -3,6 +3,7 @@
 ## 확인한 자료
 
 - 디자인 원본: [@https://www.figma.com/design/aB1r5NxzeAJZDwp1CJoPuO/%EB%B0%95%EA%B1%B4%EC%98%81?node-id=525-1518&m=dev]
+
 - 확인한 화면: [메인페이지 (desktop, node 525:1518, 1920x8196)]
 - 실제 에셋 위치: [cgv/assets, cgv/assets/figma]
 
@@ -64,6 +65,7 @@
 - archive01.png/archive02.png/foryou01.png/coming_*.png/info_*.png 로컬 에셋이 Figma 디자인 이미지와 픽셀 단위로 동일함을 스크린샷 비교로 확인함.
 - coming_중경삼림_edit.png, coming_토이스토리.png 등은 실제 파일명과 디자인 내 영화명이 일치함.
 - hero 대표작(슈퍼 마리오 갤럭시)과 동일한 소재의 로컬 mp4(assets/The Super Mario Galaxy Movie – Yoshi First Look.mp4)가 존재하여 hero 배경에 정적 이미지 대신 영상으로 활용함(자동재생/음소거/루프, prefers-reduced-motion 시 정지).
+- foryou 굿즈 티켓 섹션의 Figma 프레임 이름이 "foryou"에서 "yoshi"로 변경되었고, 디자인도 개정됨: 카드 전체 크기 축소(1283px → 1025px, 높이 354px 고정), 좌우 테두리 없이 상/하 1px 테두리만 남음, 감독/출연 크레딧 텍스트 삭제, 대신 상단 정보 블록과 예약하기 버튼 사이에 구분선(divider) 추가, "3차 미리구매" 폰트 40px→28px(Bold), 상품명 폰트 58px→44px, 예약하기 버튼 162×50px → 209×70px로 확대(이 버튼 크기 변경은 yoshi 티켓에만 적용, foryou 추천 캐러셀의 동일 클래스 버튼에는 미적용).
 
 ## 아직 확인하지 못한 내용
 

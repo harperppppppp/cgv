@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Almarai:wght@400;700;800&family=Inter:wght@400;500;600;700;800&family=Erica+One&family=Plus+Jakarta+Sans:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Almarai:wght@400;700;800&family=Inter:wght@400;500;600;700;800&family=Erica+One&family=Plus+Jakarta+Sans:wght@500;600&family=Abel&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -29,8 +29,8 @@
     <div class="hero_gradient" aria-hidden="true"></div>
   </div>
 
-  <header class="hero_header">
-    <div class="hero_side_left">
+  <header class="hero_header" data-hero-header>
+    <div class="hero_header_inner">
       <a href="#hero" class="hero_logo">
         <img src="assets/figma/hero_logo.png" alt="CGV 홈으로 이동">
       </a>
@@ -44,21 +44,21 @@
           <li><a href="#">이벤트/혜택</a></li>
         </ul>
       </nav>
-    </div>
-    <div class="hero_side_right">
-      <a href="#" class="icon_btn" aria-label="검색">
-        <img src="assets/figma/icon_search.svg" alt="">
-      </a>
-      <a href="#" class="icon_btn" aria-label="알림">
-        <img src="assets/figma/icon_alert.svg" alt="">
-      </a>
-      <a href="#" class="icon_btn" aria-label="내 티켓 보기">
-        <img src="assets/figma/icon_ticket.svg" alt="">
-      </a>
-      <a href="#" class="mypage_btn" aria-label="마이페이지로 이동">
-        <img class="mypage_avatar" src="assets/figma/avatar_default.png" alt="">
-        <img class="mypage_arrow" src="assets/figma/icon_arrow_down_small.svg" alt="">
-      </a>
+      <div class="hero_header_right">
+        <a href="#" class="icon_btn" aria-label="검색">
+          <img src="assets/figma/icon_search.svg" alt="">
+        </a>
+        <a href="#" class="icon_btn" aria-label="알림">
+          <img src="assets/figma/icon_alert.svg" alt="">
+        </a>
+        <a href="#" class="icon_btn" aria-label="내 티켓 보기">
+          <img src="assets/figma/icon_ticket.svg" alt="">
+        </a>
+        <a href="#" class="mypage_btn" aria-label="마이페이지로 이동">
+          <img class="mypage_avatar" src="assets/figma/avatar_default.png" alt="">
+          <img class="mypage_arrow" src="assets/figma/icon_arrow_down_small.svg" alt="">
+        </a>
+      </div>
     </div>
   </header>
 
@@ -103,6 +103,7 @@
           <span class="archive_card_name">조지 밀러</span>
           <p class="archive_card_desc">가장 많은 작품을 감상한 감독으로 기록되었습니다. 조지 밀러의 작품을 총 4편 관람하고, 3개의 리뷰를 남겼습니다.</p>
         </div>
+        <span class="archive_card_label">director</span>
       </li>
       <li class="archive_card archive_card_actor">
         <img class="archive_card_img_base" src="assets/archive02.png" alt="가장 많은 작품을 감상한 배우">
@@ -129,6 +130,8 @@
         <img class="confetti confetti_1" src="assets/figma/foryou_ticket_confetti1.png" alt="">
         <img class="confetti confetti_2" src="assets/figma/foryou_ticket_confetti2.png" alt="">
         <img class="confetti confetti_3" src="assets/figma/foryou_ticket_confetti2.png" alt="">
+        <img class="confetti confetti_4" src="assets/figma/foryou_ticket_confetti1.png" alt="">
+        <img class="confetti confetti_5" src="assets/figma/foryou_ticket_confetti2.png" alt="">
         <img class="foryou_goods_img" src="assets/figma/foryou_yoshi_popcorn.png" alt="요시 팝콘통 굿즈 이미지">
       </div>
       <div class="foryou_ticket_info">
@@ -137,14 +140,8 @@
           <p class="foryou_ticket_status">3차 미리구매</p>
           <p class="foryou_ticket_open">OPEN</p>
         </div>
+        <hr class="foryou_ticket_divider">
         <div class="foryou_ticket_bottom">
-          <p class="foryou_ticket_credit">
-            감독 장 뤽 고다르<br>
-            출연
-            <a href="https://namu.wiki/w/%EB%B8%8C%EB%A6%AC%EC%A7%80%ED%8A%B8%20%EB%B0%94%EB%A5%B4%EB%8F%84" target="_blank" rel="noopener">브리지트 바르도</a>,
-            <a href="https://namu.wiki/w/%EB%AF%B8%EC%85%B8%20%ED%94%BC%EC%BD%9C%EB%A6%AC" target="_blank" rel="noopener">미셸 피콜리</a>,
-            <a href="https://namu.wiki/w/%ED%94%84%EB%A6%AC%EC%B8%A0%20%EB%9E%91" target="_blank" rel="noopener">프리츠 랑</a> 외
-          </p>
           <a href="#" class="btn btn_outline_dark foryou_btn" data-movie-title="요시 팝콘통">예약하기</a>
         </div>
       </div>
@@ -215,7 +212,6 @@
 
 <!-- ================= CINETALK ================= -->
 <section id="cinetalk" class="section_cinetalk" aria-label="영화 리뷰">
-  <p class="cinetalk_bg_text" aria-hidden="true">CINE TALK</p>
   <img class="cinetalk_swirl" src="assets/figma/cinetalk_swirl.svg" alt="" aria-hidden="true">
 
   <div class="cinetalk_head">
@@ -225,44 +221,20 @@
 
   <div class="cinetalk_slider" data-carousel>
     <ul class="cinetalk_track" data-carousel-track>
-      <li class="cinetalk_card cinetalk_card_side">
-        <div class="cinetalk_card_head">
-          <div class="cinetalk_user">
-            <img class="cinetalk_user_avatar" src="assets/figma/icon_user_avatar.svg" alt="">
-            <span class="cinetalk_user_name">완벽한 슈렉</span>
-            <span class="cinetalk_user_time">6시간 전</span>
-          </div>
-          <div class="cinetalk_stars" role="img" aria-label="평점 5점 만점에 5점">
-            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
-            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
-            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
-            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
-            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
-          </div>
-        </div>
-        <div class="cinetalk_card_body">
-          <h3>에브리씽 에브리웨어 올 앳 원스</h3>
-          <p class="cinetalk_card_place">왕십리 CGV DOLBY ATMOS</p>
-          <p class="cinetalk_card_review">오늘 진귀한 경험 했습니다 돌멩이 보고 울었습니다</p>
-        </div>
-        <div class="cinetalk_card_btns">
-          <a href="#" class="btn btn_fill_white btn_sm">리뷰 더보기</a>
-          <a href="#" class="btn btn_fill_white btn_sm" data-movie-title="에브리씽 에브리웨어 올 앳 원스">예매하기</a>
-        </div>
-      </li>
-
-      <li class="cinetalk_card cinetalk_card_main">
+      <li class="cinetalk_card">
         <div class="cinetalk_card_top">
-          <div class="cinetalk_card_tit">
-            <h3>너바나 더 밴드</h3>
-            <p class="cinetalk_card_place">용산 CGV 2D</p>
+          <div class="cinetalk_card_tit_btn">
+            <div class="cinetalk_card_tit">
+              <h3>너바나 더 밴드</h3>
+              <p class="cinetalk_card_place">용산 CGV 2D</p>
+            </div>
+            <div class="cinetalk_card_btns">
+              <a href="#" class="btn btn_fill_white btn_sm">리뷰 더보기</a>
+              <a href="#" class="btn btn_fill_white btn_sm" data-movie-title="너바나 더 밴드">예매하기</a>
+            </div>
           </div>
-          <div class="cinetalk_card_btns">
-            <a href="#" class="btn btn_fill_white">리뷰 더보기</a>
-            <a href="#" class="btn btn_fill_white" data-movie-title="너바나 더 밴드">예매하기</a>
-          </div>
+          <p class="cinetalk_card_review">엉뚱한 생각에 엉뚱한 말들을 내뱉는 엉뚱한 배우들의 연기가 좋았습니다. 백 투 더 퓨처와 나비효과를 섞은 듯한 느낌의 뻔하지만 재미있는 영화였습니다. 예측 가능한 전개도 있었지만, 특유의 유쾌한 분위기와 정신없이 이어지는 상상력 덕분에 끝까지 지루할 틈이 없었습니다. 사소한 선택 하나가 예상치 못한 결과로 이어지는 과정도 흥미로웠고, 가볍게 웃으며 보기 시작했지만 마지막에는 묘한 여운까지 남는 작품이었습니다.</p>
         </div>
-        <p class="cinetalk_card_review">엉뚱한 생각에 엉뚱한 말들을 내뱉는 엉뚱한 배우들의 연기가 좋았습니다. 백 투 더 퓨처와 나비효과를 섞은 듯한 느낌의 뻔하지만 재미있는 영화였습니다.</p>
         <div class="cinetalk_card_bottom">
           <div class="cinetalk_user">
             <img class="cinetalk_user_avatar" src="assets/figma/icon_user_avatar.svg" alt="">
@@ -270,38 +242,222 @@
             <span class="cinetalk_user_time">1시간 전</span>
           </div>
           <div class="cinetalk_stars" role="img" aria-label="평점 5점 만점에 5점">
-            <img src="assets/figma/icon_star_lg.svg" alt="">
-            <img src="assets/figma/icon_star_lg.svg" alt="">
-            <img src="assets/figma/icon_star_lg.svg" alt="">
-            <img src="assets/figma/icon_star_lg.svg" alt="">
-            <img src="assets/figma/icon_star_lg.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
           </div>
         </div>
       </li>
 
-      <li class="cinetalk_card cinetalk_card_side">
-        <div class="cinetalk_card_head">
-          <div class="cinetalk_user">
-            <img class="cinetalk_user_avatar" src="assets/figma/icon_user_avatar.svg" alt="">
-            <span class="cinetalk_user_name">완벽한 슈렉</span>
-            <span class="cinetalk_user_time">6시간 전</span>
+      <li class="cinetalk_card">
+        <div class="cinetalk_card_top">
+          <div class="cinetalk_card_tit_btn">
+            <div class="cinetalk_card_tit">
+              <h3>토이스토리5</h3>
+              <p class="cinetalk_card_place">용산 CGV 2D</p>
+            </div>
+            <div class="cinetalk_card_btns">
+              <a href="#" class="btn btn_fill_white btn_sm">리뷰 더보기</a>
+              <a href="#" class="btn btn_fill_white btn_sm" data-movie-title="토이스토리5">예매하기</a>
+            </div>
           </div>
-          <div class="cinetalk_stars" role="img" aria-label="평점 5점 만점에 4점">
-            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
-            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
-            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
-            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
-            <img src="assets/figma/icon_star_sm_empty.svg" alt="">
-          </div>
-        </div>
-        <div class="cinetalk_card_body">
-          <h3>토이스토리</h3>
-          <p class="cinetalk_card_place">용산 CGV 2D</p>
           <p class="cinetalk_card_review">내 어린시절의 추억들~ 장난감 인형들 다 가지고 있는데 한번 꺼내봐야겠어요~</p>
         </div>
-        <div class="cinetalk_card_btns">
-          <a href="#" class="btn btn_fill_white btn_sm">리뷰 더보기</a>
-          <a href="#" class="btn btn_fill_white btn_sm" data-movie-title="토이스토리">예매하기</a>
+        <div class="cinetalk_card_bottom">
+          <div class="cinetalk_user">
+            <img class="cinetalk_user_avatar" src="assets/figma/icon_user_avatar.svg" alt="">
+            <span class="cinetalk_user_name">성실한 도라에몽</span>
+            <span class="cinetalk_user_time">6시간 전</span>
+          </div>
+          <div class="cinetalk_stars" role="img" aria-label="평점 5점 만점에 5점">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+          </div>
+        </div>
+      </li>
+
+      <li class="cinetalk_card">
+        <div class="cinetalk_card_top">
+          <div class="cinetalk_card_tit_btn">
+            <div class="cinetalk_card_tit">
+              <h3 class="cinetalk_font_jakarta">에브리띵 에브리웨어<br>올 앳 원스</h3>
+              <p class="cinetalk_card_place">왕십리 DOLBY ATMOS</p>
+            </div>
+            <div class="cinetalk_card_btns">
+              <a href="#" class="btn btn_fill_white btn_sm">리뷰 더보기</a>
+              <a href="#" class="btn btn_fill_white btn_sm" data-movie-title="에브리띵 에브리웨어 올 앳 원스">예매하기</a>
+            </div>
+          </div>
+          <p class="cinetalk_card_review">오늘 진귀한 경험 했습니다 돌멩이 보고 울었습니다</p>
+        </div>
+        <div class="cinetalk_card_bottom">
+          <div class="cinetalk_user">
+            <img class="cinetalk_user_avatar" src="assets/figma/icon_user_avatar.svg" alt="">
+            <span class="cinetalk_user_name">짱돌</span>
+            <span class="cinetalk_user_time">6시간 전</span>
+          </div>
+          <div class="cinetalk_stars" role="img" aria-label="평점 5점 만점에 5점">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+          </div>
+        </div>
+      </li>
+
+      <li class="cinetalk_card">
+        <div class="cinetalk_card_top">
+          <div class="cinetalk_card_tit_btn">
+            <div class="cinetalk_card_tit">
+              <h3>가디언즈 오브 갤럭시 VOL.3</h3>
+              <p class="cinetalk_card_place">용산 CGV 2D</p>
+            </div>
+            <div class="cinetalk_card_btns">
+              <a href="#" class="btn btn_fill_white btn_sm">리뷰 더보기</a>
+              <a href="#" class="btn btn_fill_white btn_sm" data-movie-title="가디언즈 오브 갤럭시 VOL.3">예매하기</a>
+            </div>
+          </div>
+          <p class="cinetalk_card_review">초반엔 그냥 그랬는데 갈수록 재밌어졌어요ㅋㅋ 배우들 연기도 자연스럽고 중간중간 웃긴 장면도 많아서 시간 가는 줄 모르고 봤습니다. 킬링타임용으로도 추천!</p>
+        </div>
+        <div class="cinetalk_card_bottom">
+          <div class="cinetalk_user">
+            <img class="cinetalk_user_avatar" src="assets/figma/icon_user_avatar.svg" alt="">
+            <span class="cinetalk_user_name">졸린 타마마</span>
+            <span class="cinetalk_user_time">6시간 전</span>
+          </div>
+          <div class="cinetalk_stars" role="img" aria-label="평점 5점 만점에 5점">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+          </div>
+        </div>
+      </li>
+
+      <li class="cinetalk_card">
+        <div class="cinetalk_card_top">
+          <div class="cinetalk_card_tit_btn">
+            <div class="cinetalk_card_tit">
+              <h3>스파이더맨<br>: 어크로스 더 유니버스</h3>
+              <p class="cinetalk_card_place">구리 CGV 2D</p>
+            </div>
+            <div class="cinetalk_card_btns">
+              <a href="#" class="btn btn_fill_white btn_sm">리뷰 더보기</a>
+              <a href="#" class="btn btn_fill_white btn_sm" data-movie-title="스파이더맨: 어크로스 더 유니버스">예매하기</a>
+            </div>
+          </div>
+          <p class="cinetalk_card_review">기대 없이 봤다가 예상보다 훨씬 만족하고 나온 영화. 웃음과 여운을 적당한 비율로 잘 담아냈습니다.</p>
+        </div>
+        <div class="cinetalk_card_bottom">
+          <div class="cinetalk_user">
+            <img class="cinetalk_user_avatar" src="assets/figma/icon_user_avatar.svg" alt="">
+            <span class="cinetalk_user_name">타마마0705</span>
+            <span class="cinetalk_user_time">6시간 전</span>
+          </div>
+          <div class="cinetalk_stars" role="img" aria-label="평점 5점 만점에 5점">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+          </div>
+        </div>
+      </li>
+
+      <li class="cinetalk_card">
+        <div class="cinetalk_card_top">
+          <div class="cinetalk_card_tit_btn">
+            <div class="cinetalk_card_tit">
+              <h3>스파이더맨<br>: 노 웨이 홈</h3>
+              <p class="cinetalk_card_place">용산 CGV Screen X</p>
+            </div>
+            <div class="cinetalk_card_btns">
+              <a href="#" class="btn btn_fill_white btn_sm">리뷰 더보기</a>
+              <a href="#" class="btn btn_fill_white btn_sm" data-movie-title="스파이더맨: 노 웨이 홈">예매하기</a>
+            </div>
+          </div>
+          <p class="cinetalk_card_review">스파이더맨이 누구야?</p>
+        </div>
+        <div class="cinetalk_card_bottom">
+          <div class="cinetalk_user">
+            <img class="cinetalk_user_avatar" src="assets/figma/icon_user_avatar.svg" alt="">
+            <span class="cinetalk_user_name">엘리트 메추리</span>
+            <span class="cinetalk_user_time">1일 전</span>
+          </div>
+          <div class="cinetalk_stars" role="img" aria-label="평점 5점 만점에 5점">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+          </div>
+        </div>
+      </li>
+
+      <li class="cinetalk_card">
+        <div class="cinetalk_card_top">
+          <div class="cinetalk_card_tit_btn">
+            <div class="cinetalk_card_tit">
+              <h3>엘리멘탈</h3>
+              <p class="cinetalk_card_place">용산 CGV laser 5관</p>
+            </div>
+            <div class="cinetalk_card_btns">
+              <a href="#" class="btn btn_fill_white btn_sm">리뷰 더보기</a>
+              <a href="#" class="btn btn_fill_white btn_sm" data-movie-title="엘리멘탈">예매하기</a>
+            </div>
+          </div>
+          <p class="cinetalk_card_review">웨이드 귀여워요.</p>
+        </div>
+        <div class="cinetalk_card_bottom">
+          <div class="cinetalk_user">
+            <img class="cinetalk_user_avatar" src="assets/figma/icon_user_avatar.svg" alt="">
+            <span class="cinetalk_user_name">엘리트 메추리</span>
+            <span class="cinetalk_user_time">1일 전</span>
+          </div>
+          <div class="cinetalk_stars" role="img" aria-label="평점 5점 만점에 5점">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+          </div>
+        </div>
+      </li>
+
+      <li class="cinetalk_card">
+        <div class="cinetalk_card_top">
+          <div class="cinetalk_card_tit_btn">
+            <div class="cinetalk_card_tit">
+              <h3>쥬라기월드 3</h3>
+              <p class="cinetalk_card_place">건대입구 CGV 3D</p>
+            </div>
+            <div class="cinetalk_card_btns">
+              <a href="#" class="btn btn_fill_white btn_sm">리뷰 더보기</a>
+              <a href="#" class="btn btn_fill_white btn_sm" data-movie-title="쥬라기월드 3">예매하기</a>
+            </div>
+          </div>
+          <p class="cinetalk_card_review">공룡은 안 나오고 공룡만한 메뚜기만 나옵니다. 공포영화 보고 싶으신 분들께 추천합니다.</p>
+        </div>
+        <div class="cinetalk_card_bottom">
+          <div class="cinetalk_user">
+            <img class="cinetalk_user_avatar" src="assets/figma/icon_user_avatar.svg" alt="">
+            <span class="cinetalk_user_name">양갱이</span>
+            <span class="cinetalk_user_time">1일 전</span>
+          </div>
+          <div class="cinetalk_stars" role="img" aria-label="평점 5점 만점에 5점">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+            <img src="assets/figma/icon_star_sm_filled.svg" alt="">
+          </div>
         </div>
       </li>
     </ul>
@@ -358,19 +514,19 @@
 
       <ul class="coming_list">
         <li>
-          <img src="assets/coming_list01.png" alt="오디세이 포스터">
+          <div class="coming_list_thumb"><img src="assets/coming_list01.png" alt="오디세이 포스터"></div>
           <span>오디세이</span>
         </li>
         <li>
-          <img src="assets/coming_list02.png" alt="HOPE 포스터">
-          <span>HOPE</span>
+          <div class="coming_list_thumb"><img src="assets/coming_list02.png" alt="HOPE 포스터"></div>
+          <span>호프</span>
         </li>
         <li>
-          <img src="assets/coming_list03.png" alt="중경삼림 리마스터링 포스터">
+          <div class="coming_list_thumb"><img src="assets/coming_list03.png" alt="중경삼림 리마스터링 포스터"></div>
           <span>중경삼림<br>리마스터링</span>
         </li>
         <li>
-          <img src="assets/coming_list04.png" alt="토이스토리5 포스터">
+          <div class="coming_list_thumb"><img src="assets/coming_list04.png" alt="토이스토리5 포스터"></div>
           <span>토이스토리5</span>
         </li>
       </ul>
@@ -382,6 +538,9 @@
 <section id="icecon" class="section_icecon" aria-labelledby="icecon_title">
   <div class="icecon_frame">
     <div class="icecon_visual">
+      <video class="icecon_bg_video" data-icecon-bg-video="1" src="assets/icecon01_video.mp4" muted loop playsinline preload="none"></video>
+      <video class="icecon_bg_video" data-icecon-bg-video="7" src="assets/icecon07_video.mp4" muted loop playsinline preload="none"></video>
+      <div class="icecon_bg_overlay" data-icecon-bg-overlay></div>
       <div class="icecon_carousel" data-icecon-carousel>
         <ul class="icecon_carousel_track" data-icecon-track>
           <li class="icecon_carousel_item">
@@ -394,7 +553,7 @@
             <div class="icecon_carousel_card">
               <div class="icecon_carousel_face icecon_carousel_face_front"><img src="assets/icecon02.png" alt="쏜애플 불구경 2024 라이브 콘서트 필름"></div>
               <div class="icecon_carousel_face icecon_carousel_face_back"></div>
-     테일러 스위프트: 디 에라스 투어쏜애플 불구경 2024 라이브 콘서트 필름식스데이즈함께 날아오르다: 레드불 T1 다큐멘터리2026 KBO 올스타전 나눔 VS 드림아이유 콘서트: 더 위닝하이라이트: 라이츠 고 온, 어게인 인 시네마2026 신한 SOL KBO 리그 극장단독 생중계       </div>
+            </div>
           </li>
           <li class="icecon_carousel_item">
             <div class="icecon_carousel_card">
@@ -436,11 +595,8 @@
       </div>
     </div>
     <p class="icecon_sub">현장의 함성을 그대로</p>
-    <h2 id="icecon_title" class="icecon_title">ice con</h2>
-    <a href="#" class="btn btn_fill_grey" data-movie-title="ICECON">
-      예매하기
-      <img src="assets/figma/icon_arrow_right_white.svg" alt="">
-    </a>
+    <h2 id="icecon_title" class="icecon_title">Ice </h2>
+    <h2 id="icecon_title2" class="icecon_title2"> con</h2>
   </div>
 </section>
 
@@ -453,31 +609,38 @@
 
   <ul class="info_list">
     <li>
-      <img src="assets/info_액티비티.png" alt="이벤트/혜택">
-      <span>이벤트/혜택</span>
-    </li>
-    <li>
       <img src="assets/info_대관.png" alt="단체/대관">
       <span>단체 / 대관</span>
+    </li>
+    <li>
+      <img src="assets/info_액티비티.png" alt="이벤트/혜택">
+      <span>이벤트 / 혜택</span>
     </li>
     <li>
       <img src="assets/info_아트갤러리.png" alt="아트갤러리">
       <span>아트 갤러리</span>
     </li>
     <li>
-      <img src="assets/info_매점.png" alt="매점/굿즈">
-      <span>매점 / 굿즈</span>
-    </li>
-    <li>
       <img src="assets/info_포토플레이.png" alt="포토플레이">
       <span>포토 플레이</span>
     </li>
+    <li>
+      <img src="assets/figma/info_sns_x.png" alt="X">
+      <span>X</span>
+    </li>
+    <li>
+      <img src="assets/figma/info_sns_instagram.png" alt="인스타그램">
+      <span>인스타그램</span>
+    </li>
+    <li>
+      <img src="assets/figma/info_sns_youtube.png" alt="유튜브">
+      <span>유튜브</span>
+    </li>
+    <li>
+      <img src="assets/figma/info_sns_kakaotalk.png" alt="카카오톡">
+      <span>카카오톡</span>
+    </li>
   </ul>
-
-  <a href="#" class="info_view_all">
-    VIEW ALL
-    <img src="assets/figma/icon_arrow_right_coral.svg" alt="" class="info_view_all_arrow">
-  </a>
 </section>
 
 </main>

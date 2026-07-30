@@ -1,0 +1,53 @@
+<svg width="340" height="340" viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CGV 팝콘 로고">
+  <title>CGV Popcorn Logo</title>
+
+  <!-- ===== black outline layer (union) ===== -->
+  <g fill="#1b1b1b">
+    <circle cx="170" cy="70" r="55"/>
+    <circle cx="112" cy="86" r="49"/>
+    <circle cx="228" cy="86" r="49"/>
+    <circle cx="66" cy="122" r="47"/>
+    <circle cx="274" cy="122" r="47"/>
+    <circle cx="112" cy="140" r="51"/>
+    <circle cx="170" cy="120" r="59"/>
+    <circle cx="228" cy="140" r="51"/>
+    <circle cx="95" cy="176" r="43"/>
+    <circle cx="146" cy="182" r="41"/>
+    <circle cx="194" cy="182" r="41"/>
+    <circle cx="245" cy="176" r="43"/>
+    <circle cx="126" cy="202" r="35"/>
+    <circle cx="170" cy="206" r="35"/>
+    <circle cx="214" cy="202" r="35"/>
+  </g>
+
+  <!-- ===== popcorn kernels (cream + butter) ===== -->
+  <g>
+    <circle cx="170" cy="70" r="48" fill="#FFFDF5"/>
+    <circle cx="112" cy="86" r="42" fill="#FFE39A"/>
+    <circle cx="228" cy="86" r="42" fill="#FFFDF5"/>
+    <circle cx="66" cy="122" r="40" fill="#FFFDF5"/>
+    <circle cx="274" cy="122" r="40" fill="#FFE39A"/>
+    <circle cx="112" cy="140" r="44" fill="#FFFDF5"/>
+    <circle cx="170" cy="120" r="52" fill="#FFFDF5"/>
+    <circle cx="228" cy="140" r="44" fill="#FFE39A"/>
+    <circle cx="95" cy="176" r="36" fill="#FFFDF5"/>
+    <circle cx="146" cy="182" r="34" fill="#FFE39A"/>
+    <circle cx="194" cy="182" r="34" fill="#FFFDF5"/>
+    <circle cx="245" cy="176" r="36" fill="#FFFDF5"/>
+    <circle cx="126" cy="202" r="28" fill="#FFFDF5"/>
+    <circle cx="170" cy="206" r="28" fill="#FFE39A"/>
+    <circle cx="214" cy="202" r="28" fill="#FFFDF5"/>
+  </g>
+
+  <!-- ===== 3D glasses ===== -->
+  <g>
+    <path d="M60 156 L96 162" stroke="#1b1b1b" stroke-width="7" stroke-linecap="round"/>
+    <path d="M280 156 L244 162" stroke="#1b1b1b" stroke-width="7" stroke-linecap="round"/>
+    <rect x="98" y="150" width="64" height="36" rx="10" fill="#E5392B" stroke="#1b1b1b" stroke-width="7"/>
+    <rect x="178" y="150" width="64" height="36" rx="10" fill="#2E7BD6" stroke="#1b1b1b" stroke-width="7"/>
+    <path d="M162 165 L178 165" stroke="#1b1b1b" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <!-- ===== wordmark ===== -->
+  <text x="170" y="300" text-anchor="middle" font-family="'Arial Black','Archivo Black',sans-serif" font-weight="900" font-size="76" letter-spacing="2" fill="#ED1C24">CGV</text>
+</svg>
